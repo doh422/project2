@@ -4,4 +4,7 @@ class UsersController < ApplicationController
 		@users = User.new
 	end
 
+	def create
+	end
+
 end

@@ -8,4 +8,8 @@ Rails.application.routes.draw do
 
   get "users/show" => "users#show"
 
+  get "users/create" => "users#create"
+
+  get "users/select"
+
 end
