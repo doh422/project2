@@ -3,7 +3,7 @@ login form
 <br/>
 
 <%= form_for :user, url: create_session_path do %>
-  Email: <%= email_field_tag :login %><br/>
+  Email: <%= email_field_tag :email %><br/>
   Password: <%= password_field_tag :password %><br/>
   <%= submit_tag "Sign In!" %>
 <% end %>

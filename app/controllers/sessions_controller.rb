@@ -9,16 +9,20 @@ class SessionsController < ApplicationController
 
 		if @user
 			session[:id] = @user.id
-			redirect_to users_show_path
+			redirect_to sessions_show_path
 		else
 			redirect_to root_path
 		end
 	end
 
+	def show
+		@user = User.find(session[:id])
+	end
+
 	#logout
 	def destroy
 		session[:user_id] = nil
-		redirect_to users_login_path
+		redirect_to login_path
 	end
 
 end

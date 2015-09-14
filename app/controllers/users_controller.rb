@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			flash[:success] = "You've successfully created an account"
-			redirect_to users_show_path
+			redirect_to sessions_new_path
 		else
 			flash[:error] = "Please try again"
 			render :new
@@ -19,7 +19,6 @@ class UsersController < ApplicationController
 	def new
 		@users = User.new
 	end
-
 
 	private
 	def user_params
