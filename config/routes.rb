@@ -12,10 +12,6 @@ Rails.application.routes.draw do
 
   post "login" => "sessions#create", as: :create_session
 
-  get "sessions/new" => "sessions#new"
-
-  get "users/show" => "users#show"
-
   get "sessions/show" => "sessions#show"
 
   get "sessions/destroy" => "sessions#destroy", as: :destroy_session
