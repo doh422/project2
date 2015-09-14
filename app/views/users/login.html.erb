@@ -1,5 +1,13 @@
 login form
 
-<button><%= link_to "Sign in", users_show_path %></button>
+<br/>
+
+<%= form_for :user, url: create_session_path do %>
+  Email: <%= email_field_tag :login %><br/>
+  Password: <%= password_field_tag :password %><br/>
+  <%= submit_tag "Sign In!" %>
+<% end %>
+
+<br/>
 
 <button><%= link_to "Back", root_path %></button>

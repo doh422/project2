@@ -2,14 +2,18 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
-  get "users/new" => "users#new"
+  get "new" => "users#new"
 
-  get "users/login" => "users#login"
+  post "new" => "users#create"
 
-  get "users/show" => "users#show"
+  get "login" => "users#login"
 
   get "users/create" => "users#create"
 
-  get "users/select"
+  post "login" => "sessions#create", as: :create_session
+
+  get "users/show" => "sessions#new"
+
+  get "sessions/destroy" => "sessions#destroy"
 
 end
