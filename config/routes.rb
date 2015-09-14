@@ -4,4 +4,8 @@ Rails.application.routes.draw do
 
   get "users/new" => "users#new"
 
+  get "users/login" => "users#login"
+
+  get "users/show" => "users#show"
+
 end
