@@ -17,9 +17,20 @@ class TeamsController < ApplicationController
 	end
 
 	def edit
+		@user = User.find(session[:id])
 	end
 
 	def update
+		@team_name = params[:name]
+		@team_user_id = params[:user_id]
+		@team = Team.update(name: @team_name, user_id: @team_user_id)
+
+
+		if @team.save
+			redirect_to sessions_show_path
+		else
+			redirect_to sessions_show_path
+		end		
 	end
 
 end

@@ -2,8 +2,9 @@ Edit your team!
 
 <br/>
 
-<%= form_for :team, url: create_team_path do %>
+<%= form_for :team, url: update_team_path, method: 'patch' do %>
   Team Name: <%= text_field_tag :name %><br/>
+  <%= hidden_field_tag "user_id", @user.id %><br/>
 
   <%= submit_tag "Save changes!" %>
 <% end %>

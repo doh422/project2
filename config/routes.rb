@@ -22,6 +22,6 @@ Rails.application.routes.draw do
 
   get "teams/:id/edit" => "teams#edit", as: :edit_team
 
-  patch "teams/:id/update" => "teams#update", as: :update_team
+  patch "teams/:id/edit" => "teams#update", as: :update_team
 
 end
