@@ -23,7 +23,9 @@ class TeamsController < ApplicationController
 	def update
 		@team_name = params[:name]
 		@team_user_id = params[:user_id]
+		#below code finds the team that has user's id as team's id
 		@team = Team.find_by(user_id: @team_user_id)
+		#updates name of team grabbed above
 		@team.update(name: @team_name)
 
 		if @team.save
