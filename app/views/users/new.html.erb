@@ -2,6 +2,10 @@ Sign up form
 
 <br/>
 
+<% flash.each do |key,value|  %>
+	<div class="<%= key %>" > <%= value %> </div>
+<% end %>
+
 <%= form_for :user, url: new_path do %>
   Name: <%= text_field_tag :name %><br/>
   Email: <%= email_field_tag :email %><br/>

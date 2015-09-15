@@ -1,0 +1,9 @@
+Edit your team!
+
+<br/>
+
+<%= form_for :team, url: create_team_path do %>
+  Team Name: <%= text_field_tag :name %><br/>
+
+  <%= submit_tag "Save changes!" %>
+<% end %>

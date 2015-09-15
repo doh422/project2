@@ -16,8 +16,12 @@ Rails.application.routes.draw do
 
   get "sessions/destroy" => "sessions#destroy", as: :destroy_session
 
-  get "teams/new" => "teams#new"
+  get "teams/new" => "teams#new", as: :new_team
 
   post "teams/new" => "teams#create", as: :create_team
+
+  get "teams/:id/edit" => "teams#edit", as: :edit_team
+
+  patch "teams/:id/update" => "teams#update", as: :update_team
 
 end
