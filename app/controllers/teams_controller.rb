@@ -35,4 +35,19 @@ class TeamsController < ApplicationController
 		end		
 	end
 
+	# def assign
+	# 	@player_name = params[:name]
+	# 	@player_position = params[:position]
+	# 	@player_r_team = params[:r_team]
+	# 	@player_team_id = params[:team_id]
+	# 	@player_user_id = params[:user_id]
+	# 	@player = Player.updates({team_id: @player_team_id, user_id: @player_user_id})	
+
+	# 	if @player.save
+	# 		redirect_to sessions_show_path
+	# 	else
+	# 		redirect_to sessions_show_path
+	# 	end
+	# end
+
 end

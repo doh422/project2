@@ -8,4 +8,8 @@ class PlayersController < ApplicationController
 		@player = Player.find(params[:id])
 	end
 
+	def assign
+		
+	end
+
 end
