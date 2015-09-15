@@ -24,4 +24,6 @@ Rails.application.routes.draw do
 
   patch "teams/:id/edit" => "teams#update", as: :update_team
 
+  get "players/list" => "players#index"
+
 end
