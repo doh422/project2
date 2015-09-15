@@ -23,8 +23,8 @@ class TeamsController < ApplicationController
 	def update
 		@team_name = params[:name]
 		@team_user_id = params[:user_id]
-		@team = Team.update(name: @team_name, user_id: @team_user_id)
-
+		@team = Team.find_by(user_id: @team_user_id)
+		@team.update(name: @team_name)
 
 		if @team.save
 			redirect_to sessions_show_path
