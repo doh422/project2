@@ -26,4 +26,6 @@ Rails.application.routes.draw do
 
   get "players/list" => "players#index"
 
+  get "players/:id" => "players#show", as: :player
+
 end

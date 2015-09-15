@@ -4,7 +4,11 @@
 
 <ul>
 	<% @players.each do |x| %>
-	<li><%= x.name %>, <%= x.position %> - <%= x.r_team %></li>
+	<li><%= link_to x.name, x %>, <%= x.position %> - <%= x.r_team %></li>
 	<br/>
 	<%end%>
 </ul>
+
+<br/>
+
+<button><%= link_to "Back", sessions_show_path %></button>
