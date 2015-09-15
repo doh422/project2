@@ -17,6 +17,8 @@ class SessionsController < ApplicationController
 
 	def show
 		@user = User.find(session[:id])
+		@team  = @user.team
+		
 	end
 
 	#logout

@@ -1,0 +1,11 @@
+Create your team!
+
+<%= form_for :team, url: create_team_path do %>
+  Team Name: <%= text_field_tag :name %><br/>
+  <%= hidden_field_tag "user_id", @user.id %><br/>
+
+  <%= submit_tag "Save Changes!" %>
+<% end %>
+
+<br/>
+

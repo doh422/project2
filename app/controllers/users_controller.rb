@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			flash[:success] = "You've successfully created an account"
-			redirect_to sessions_new_path
+			redirect_to teams_new_path
 		else
 			flash[:error] = "Please try again"
 			render :new
