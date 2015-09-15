@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+50.times do 
+	Player.create({name:Faker::Name.name,position:Faker::Lorem.word,r_team:Faker::Address.city})
+end
