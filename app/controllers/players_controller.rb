@@ -5,11 +5,9 @@ class PlayersController < ApplicationController
 	end
 
 	def show
+		@user_id = session[:id]
 		@player = Player.find(params[:id])
-	end
-
-	def assign
-		
+		@team = Team.where(user_id: @user_id)
 	end
 
 end

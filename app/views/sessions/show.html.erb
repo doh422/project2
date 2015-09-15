@@ -9,12 +9,6 @@
 
 Players
 
-<ul>
-	<% @team.players.each do |x| %>
-	<li><%= link_to x.name, x %>, <%= x.position %> - <%= x.r_team %></li>
-	<br/>
-	<%end%>
-</ul>
 
 <button><%= link_to "add players", players_list_path %></button>
 
