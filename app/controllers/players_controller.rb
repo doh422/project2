@@ -1,13 +1,35 @@
 class PlayersController < ApplicationController
 
 	def index
-		@players = Player.all
+		@playerz = Player.all
+
+		if params[:query]
+	  		search_field = params[:search].to_sym
+
+	  		query = params[:query]
+	  		player_list = Player.all
+	  		@players = []
+	        player_list.each do |player|
+	            if player[search_field].downcase.include? query.downcase
+	                @players << player
+	            end
+	        end
+  		else 
+    		@players = Player.page(params[:page]).per(10).padding(0)
+    	end
 	end
 
 	def show
 		@user_id = session[:id]
 		@player = Player.find(params[:id])
-		@team = Team.where(user_id: @user_id)
+		@team = Team.find_by(user_id: @user_id)
+
+		if @team.players.include?(@player)
+			@present = true
+		else
+			@present = false
+		end
+
 	end
 
 end

@@ -5,9 +5,16 @@
 <h3><%= @player.position %> - <%= @player.r_team %></h3>
 
 <br/>
+
 Team Name: <%= @team.name %>
 
-<button><%= link_to "Add to Team", create_roster_path(team_id: @team) %></button>
+<br/>
+
+<% if @present %>
+	Player is on your team 
+<% else %>
+	<button><%= link_to "Add to Team", create_roster_path(team_id: @team) %></button>
+<%end%>
 
 <br/>
 

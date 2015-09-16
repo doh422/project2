@@ -2,8 +2,23 @@
 
 <br/>
 
+<%= form_tag('/players/list', method: "get") do %>
+	Search player by:
+	<%= select_tag "search", options_for_select(["name","position","r_team"]) %>
+      : <%= text_field_tag :query %>
+	<%= submit_tag "Search", "class" => "btn btn-primary" %>
+    <% end %>
+
+	<br/>
+
+  <% if @players.methods.include? :page %>
+    <%= paginate @players %>
+    <%end%>
+
+<br/>
+
 <ul>
-	<% @players.each do |x| %>
+	<% @playerz.each do |x| %>
 	<li><%= link_to x.name, x %>, <%= x.position %> - <%= x.r_team %></li>
 	<br/>
 	<%end%>
