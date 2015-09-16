@@ -32,6 +32,6 @@ Rails.application.routes.draw do
 
   get "players/:id/create" => "rosters#create", as: :create_roster
 
-  get "teams/show" => "teams#show"
+  get "teams/:id" => "teams#show", as: :team
 
 end

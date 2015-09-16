@@ -21,7 +21,7 @@ Players
 	<!--set variable to player-->
 	<% @player_id = x.player_id %>
 	<!--grabs player object whose id matches variable above; 'where' returns array, grab first item and return name-->
-	<li><%= Player.where(id: @player_id).first.name %></li>
+	<li><%= Player.where(id: @player_id).first.name%></li>
 	<%end%>
 
 </ul>

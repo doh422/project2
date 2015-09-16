@@ -6,13 +6,13 @@
 
 <br/>
 
-Team Name: <%= @team.name %>
+Team Name: 
 
 <br/>
 
 <!--uses conditional from controller to determine whether or not add button is viewable-->
 <% if @present %>
-	Player is on your team 
+	<button><%= link_to	"Drop Player" %></button>
 <% else %>
 	<button><%= link_to "Add to Team", create_roster_path(team_id: @team) %></button>
 <%end%>

@@ -29,7 +29,9 @@ class PlayersController < ApplicationController
 		else
 			@present = false
 		end
+	end
 
+	def delete
 	end
 
 end

@@ -20,9 +20,9 @@ class TeamsController < ApplicationController
 		end
 	end
 
-	# def show
-	# 	@team = Team.find(params[:id])
-	# end
+	def show
+		@team = Team.find(params[:id])
+	end
 
 	def edit
 		@user = User.find(session[:id])
