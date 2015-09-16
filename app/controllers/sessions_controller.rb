@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 	def show
 		@user = User.find(session[:id])
 		@team  = @user.team
-		# @players = find(params[:id])
+		@roster = Roster.where(team_id: @team).all
 	end
 
 	#logout
