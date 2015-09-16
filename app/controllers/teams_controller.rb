@@ -22,6 +22,7 @@ class TeamsController < ApplicationController
 
 	def show
 		@team = Team.find(params[:id])
+		@roster = Roster.where(team_id: @team).all
 	end
 
 	def edit
