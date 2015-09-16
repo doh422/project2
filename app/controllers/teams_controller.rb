@@ -1,5 +1,9 @@
 class TeamsController < ApplicationController
 
+	def index
+		@teams = Team.all
+	end
+
 	def new
 		@user = User.find(session[:id])
 	end

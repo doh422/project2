@@ -1,0 +1,14 @@
+<h1>Teams</h1>
+
+<br/>
+
+<ul>
+	<% @teams.each do |x| %>
+	<li><%= x.name %></li>
+	<br/>
+	<%end%>
+</ul>
+
+<br/>
+
+<button><%= link_to "back", sessions_show_path %></button>

@@ -5,6 +5,11 @@
 <%= @user.team.name %>
 
 <button><%= link_to "change team name", edit_team_path(@user.team) %></button>
+
+<br/>
+
+<button><%= link_to "View other teams", teams_index_path %></button>
+
 <br/>
 
 Players
