@@ -23,7 +23,7 @@ class PlayersController < ApplicationController
 		@user_id = session[:id]
 		@player = Player.find(params[:id])
 		@team = Team.find_by(user_id: @user_id)
-
+		#conditional returns boolean if player is/isn't already on team
 		if @team.players.include?(@player)
 			@present = true
 		else
