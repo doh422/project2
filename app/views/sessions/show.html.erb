@@ -1,35 +1,39 @@
-<%= @user.name %>'s account 
+<div class="container">
 
-<br/>	
+	<%= @user.name %>'s account 
 
-<%= @user.team.name %>
+	<br/>	
 
-<button><%= link_to "change team name", edit_team_path(@user.team) %></button>
+	<%= @user.team.name %>
 
-<br/>
+	<button><%= link_to "change team name", edit_team_path(@user.team) %></button>
 
-<button><%= link_to "View other teams", teams_index_path %></button>
+	<br/>
 
-<br/>
+	<button><%= link_to "View other teams", teams_index_path %></button>
 
-Players
+	<br/>
 
-<br/>
+	Players
 
-<ul>
-	<% @roster.each do |x| %>
-	<!--set variable to player-->
-	<% @player_id = x.player_id %>
-	<!--grabs player object whose id matches variable above; 'where' returns array, grab first item and return name-->
-	<li><%= Player.where(id: @player_id).first.name%></li>
-	<%end%>
+	<br/>
 
-</ul>
+	<ul>
+		<% @roster.each do |x| %>
+		<!--set variable to player-->
+		<% @player_id = x.player_id %>
+		<!--grabs player object whose id matches variable above; 'where' returns array, grab first item and return name-->
+		<li><%= Player.where(id: @player_id).first.name%></li>
+		<%end%>
 
-<button><%= link_to "add players", players_list_path %></button>
+	</ul>
 
-<br/>
+	<button><%= link_to "add players", players_list_path %></button>
 
-<button><%= link_to "Logout", destroy_session_path %></button>
+	<br/>
 
-<br/>
+	<button><%= link_to "Logout", destroy_session_path %></button>
+
+	<br/>
+
+</div>

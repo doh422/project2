@@ -31,7 +31,4 @@ class PlayersController < ApplicationController
 		end
 	end
 
-	def delete
-	end
-
 end

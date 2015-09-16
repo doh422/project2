@@ -1,19 +1,23 @@
-login form
+<div class="container">
 
-<br/>
+	login form
 
-<% flash.each do |key,value|  %>
-    <div class="<%= key %>" > <%= value %> </div>
-<% end %>
+	<br/>
 
-<br/>
+	<% flash.each do |key,value|  %>
+	    <div class="<%= key %>" > <%= value %> </div>
+	<% end %>
 
-<%= form_for :user, url: create_session_path do %>
-  Email: <%= email_field_tag :email %><br/>
-  Password: <%= password_field_tag :password %><br/>
-  <%= submit_tag "Sign In!" %>
-<% end %>
+	<br/>
 
-<br/>
+	<%= form_for :user, url: create_session_path do %>
+	  Email: <%= email_field_tag :email %><br/>
+	  Password: <%= password_field_tag :password %><br/>
+	  <%= submit_tag "Sign In!" %>
+	<% end %>
 
-<button><%= link_to "Back", root_path %></button>
+	<br/>
+
+	<button><%= link_to "Back", root_path %></button>
+
+</div>

@@ -1,14 +1,24 @@
-<h1>Teams</h1>
+<div class="container">
 
-<br/>
+	<h1>Teams</h1>
 
-<ul>
-	<% @teams.each do |x| %>
-	<li><%= link_to x.name, x %></li>
 	<br/>
-	<%end%>
-</ul>
 
-<br/>
+	<table class="table table-bordered">
+		<tr>
+			<th>Teams</th>
+			<th>Owner</th>
+		</tr>
+		<% @teams.each do |x| %>
+		<tr>
+			<td><%= link_to x.name, x %></td>
+			<td></td>
+		</tr>
+		<%end%>
+	</table>
 
-<button><%= link_to "back", sessions_show_path %></button>
+	<br/>
+
+	<button><%= link_to "back", sessions_show_path %></button>
+
+</div>

@@ -1,12 +1,16 @@
-<h1><%= @team.name %></h1>
+<div class="container">
 
-<ul>
-	<% @roster.each do |x| %>
-	<!--set variable to player-->
-	<% @player_id = x.player_id %>
-	<!--grabs player object whose id matches variable above; 'where' returns array, grab first item and return name-->
-	<li><%= Player.where(id: @player_id).first.name%></li>
-	<%end%>
-</ul>
+	<h1><%= @team.name %></h1>
 
-<button><%= link_to "Back", teams_index_path %></button>
+	<ul>
+		<% @roster.each do |x| %>
+		<!--set variable to player-->
+		<% @player_id = x.player_id %>
+		<!--grabs player object whose id matches variable above; 'where' returns array, grab first item and return name-->
+		<li><%= Player.where(id: @player_id).first.name%></li>
+		<%end%>
+	</ul>
+
+	<button><%= link_to "Back", teams_index_path %></button>
+
+</div>

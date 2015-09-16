@@ -1,22 +1,26 @@
-<h1><%= @player.name %></h1>
+<div class="container">
 
-<br/>
+	<h1><%= @player.name %></h1>
 
-<h3><%= @player.position %> - <%= @player.r_team %></h3>
+	<br/>
 
-<br/>
+	<h3><%= @player.position %> - <%= @player.r_team %></h3>
 
-Team Name: 
+	<br/>
 
-<br/>
+	Team Name: 
 
-<!--uses conditional from controller to determine whether or not add button is viewable-->
-<% if @present %>
-	<button><%= link_to	"Drop Player" %></button>
-<% else %>
-	<button><%= link_to "Add to Team", create_roster_path(team_id: @team) %></button>
-<%end%>
+	<br/>
 
-<br/>
+	<!--uses conditional from controller to determine whether or not add button is viewable-->
+	<% if @present %>
+		<button><%= link_to	"Drop Player", delete_roster_path(team_id: @team) %></button>
+	<% else %>
+		<button><%= link_to "Add to Team", create_roster_path(team_id: @team) %></button>
+	<%end%>
 
-<button><%= link_to "Back", players_list_path %></button>
+	<br/>
+
+	<button><%= link_to "Back", players_list_path %></button>
+
+</div>

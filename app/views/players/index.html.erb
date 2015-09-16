@@ -1,29 +1,42 @@
-<h1>Players</h1>
+<div class="container">
 
-<br/>
-
-<%= form_tag('/players/list', method: "get") do %>
-	Search player by:
-	<%= select_tag "search", options_for_select(["name","position","r_team"]) %>
-      : <%= text_field_tag :query %>
-	<%= submit_tag "Search", "class" => "btn btn-primary" %>
-    <% end %>
+	<h1>Players</h1>
 
 	<br/>
 
-  <% if @players.methods.include? :page %>
-    <%= paginate @players %>
-    <%end%>
+	<%= form_tag('/players/list', method: "get") do %>
+		Search player by:
+		<%= select_tag "search", options_for_select(["name","position","r_team"]) %>
+	      : <%= text_field_tag :query %>
+		<%= submit_tag "Search", "class" => "btn btn-primary" %>
+	    <% end %>
 
-<br/>
+		<br/>
 
-<ul>
-	<% @playerz.each do |x| %>
-	<li><%= link_to x.name, x %>, <%= x.position %> - <%= x.r_team %></li>
+	  <% if @players.methods.include? :page %>
+	    <%= paginate @players %>
+	    <%end%>
+
 	<br/>
-	<%end%>
-</ul>
 
-<br/>
+	<table class="table table-bordered">
+		<tr>
+			<th>Name</th>
+			<th>Position</th>
+			<th>Team</th>
+		</tr>
+		<% @playerz.each do |x| %>
+		<tr>
+			<td><%= link_to x.name, x %></td> 
+			<td><%= x.position %></td>
+			<td><%= x.r_team %></td>
+		</tr>
+		<%end%>
+	</table>
 
-<button><%= link_to "Back", sessions_show_path %></button>
+	<br/>
+
+	<button><%= link_to "Back", sessions_show_path %></button>
+
+
+</div>

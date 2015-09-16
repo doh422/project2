@@ -34,4 +34,6 @@ Rails.application.routes.draw do
 
   get "teams/:id" => "teams#show", as: :team
 
+  delete "players/:id" => "rosters#destroy", as: :delete_roster
+
 end
