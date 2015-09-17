@@ -1,39 +1,13 @@
 
 <div class="container">
 
-	<div class="icon-bar five-up">
-	  <a class="item">
-	    <i class="fi-home"></i>
-	    <label>Home</label>
-	  </a>
-	  <a class="item" href="<%= edit_team_path(@user.team) %>">
-	  	<i class="fi-widget"></i>
-	  	<label>Settings</label>
-	  </a>
-	  <a class="item">
-	    <i class="fi-mail"></i>
-	    <label>Messages</label>
-	  </a>
-	  <a class="item">
-	  	<i class="fi-like"></i>
-	    <label>Likes</label>
-	  </a>
-	  <a class="item" data-dropdown="drop">
-	  	<i class="fi-list"></i>
-	    <label>View</label>
-	    	<ul id="drop" class="small f-dropdown" data-dropdown-content>
-	    		<li><a href="<%= teams_index_path %>">All Teams</a></li>
-	    		<li><a href="<%= players_list_path %>">All Players</a></li>
-	    	</ul>
-	  </a>
-	</div>
+	<%= render "shared/nav" %>
 
 	<h1><%= @user.name %>'s account</h1>
 
 	<br/>	
 
 	<h2><%= @user.team.name %></h2>
-
 
 
 	<br/>
@@ -58,10 +32,6 @@
 		<%end%>
 
 	</div>
-
-
-
-	<%= link_to "add players", players_list_path %>
 
 	<br/>
 
