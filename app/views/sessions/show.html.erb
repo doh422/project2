@@ -23,12 +23,12 @@
 		<!--set variable to player-->
 		<% @player_id = x.player_id %>
 		<!--grabs player object whose id matches variable above; 'where' returns array, grab first item and return name-->
-		<li><%= Player.where(id: @player_id).first.name%></li>
+		<li><%= link_to (Player.where(id: @player_id).first.name), x.player %></li>
 		<%end%>
 
 	</ul>
 
-	
+
 
 	<button><%= link_to "add players", players_list_path %></button>
 

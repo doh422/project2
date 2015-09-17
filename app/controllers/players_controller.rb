@@ -32,4 +32,14 @@ class PlayersController < ApplicationController
 		@roster = Roster.where(player_id: @player)
 	end
 
+	# def destroy
+	# 	@user_id = session[:id]
+	# 	@user = User.find_by(id: @user_id)
+	# 	@team = @user.team
+	# 	@player = Player.find(params[:id])
+	# 	@roster = Roster.find_by(player_id: @player.id,team_id: @team.id)
+	# 	@roster.destroy
+	# 	redirect_to sessions_show_path
+	# end
+
 end

@@ -26,12 +26,13 @@ class RostersController < ApplicationController
 		@roster = Roster.find(params[:id])
 	end
 
-	def destroy
+	def delete
 		@user_id = session[:id]
 		@user = User.find(@user_id)
 		@team = @user.team
-		@roster = Roster.find_by(player_id:params[:player_id],team_id: @team.id)
-		@roster.destroy
+		@player = Player.find(params[:id])
+		@roster = Roster.find_by(player_id:@player.id,team_id: @team.id)
+		@roster.delete
 		redirect_to sessions_show_path
 	end
 
