@@ -1,4 +1,4 @@
-	<div class="icon-bar one-up">
+	<div class="icon-bar five-up">
 	  <a class="item" href="<%= sessions_show_path %>">
 	    <i class="fi-home"></i>
 	    <label>Home</label>
@@ -14,5 +14,13 @@
 	  <a class="item">
 	  	<i class="fi-like"></i>
 	    <label>Likes</label>
+	  </a>
+	  <a class="item" data-dropdown="drop">
+	  	<i class="fi-list"></i>
+	    <label>View</label>
+	    	<ul id="drop" class="small f-dropdown" data-dropdown-content>
+	    		<li><a href="<%= teams_index_path %>">All Teams</a></li>
+	    		<li><a href="<%= players_list_path %>">All Players</a></li>
+	    	</ul>
 	  </a>
 	</div>
