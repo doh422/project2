@@ -2,6 +2,9 @@
 
 	<h1><%= @team.name %></h1>
 
+
+
+
 	<ul>
 		<% @roster.each do |x| %>
 		<!--set variable to player-->
@@ -10,6 +13,24 @@
 		<li><%= Player.where(id: @player_id).first.name%></li>
 		<%end%>
 	</ul>
+
+	<!--bootstrap-->
+	<div class="row">
+	  <div class="col-sm-6 col-md-4">
+	  	<% @roster.each do |x| %>
+		<!--set variable to player-->
+		<% @player_id = x.player_id %>
+		<!--grabs player object whose id matches variable above; 'where' returns array, grab first item and return name-->
+	    <div class="thumbnail">
+	      <img src="..." alt="...">
+	      <div class="caption">
+	        <h3><%= Player.where(id: @player_id).first.name%></h3>
+	        <p>blah blah blah</p>
+	      </div>
+	    </div>
+	    <%end%>
+	  </div>
+	</div>
 
 	<button><%= link_to "Back", teams_index_path %></button>
 
