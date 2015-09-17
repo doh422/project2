@@ -17,6 +17,8 @@ class PlayersController < ApplicationController
   		else 
     		@players = Player.page(params[:page]).per(50).padding(0)
     	end
+    	@user = User.find(session[:id])
+		@team  = @user.team
 	end
 
 	def show
