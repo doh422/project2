@@ -17,11 +17,10 @@
 	    <div class="col-sm-10"><%= password_field_tag :password, nil, placeholder: "Password", class: "form-control" %></div>
 	  <label class="col-sm-2 control-label">Confirm Password</label>
 	    <div class="col-sm-10"><%= password_field_tag :password_confirmation, nil, placeholder: "Password Confirm", class: "form-control" %></div>
-	  <%= submit_tag "Sign Up!" %>
+	  <div class="col-sm-offset-2 col-sm-10">
+	  	<%= submit_tag "Sign Up!", class: "btn btn-primary" %>
 	<% end %>
-
-	<br/>
-
-	<button><%= link_to "Back", root_path %></button>	
+	  	<%= link_to "Back", root_path, class: "btn btn-danger" %>
+	  </div>	
 
 </div>
