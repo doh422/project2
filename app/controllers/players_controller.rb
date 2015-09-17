@@ -29,6 +29,7 @@ class PlayersController < ApplicationController
 		else
 			@present = false
 		end
+		@roster = Roster.where(player_id: @player)
 	end
 
 end

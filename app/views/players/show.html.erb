@@ -9,6 +9,11 @@
 	<br/>
 
 	Team Name: 
+	<ul>
+		<% @roster.each do |x| %>
+		<li><%= x.team.name %></li>
+		<%end%>
+	</ul>
 
 	<br/>
 
