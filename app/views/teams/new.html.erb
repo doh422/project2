@@ -1,14 +1,20 @@
 <div class="container">
 
-	Create your team!
+	<div class="panel panel-primary col-md-6">
 
-	<%= form_for :team, url: create_team_path do %>
-	  Team Name: <%= text_field_tag :name %><br/>
-	  <%= hidden_field_tag "user_id", @user.id %><br/>
+		<h4>Create your team!</h4>
 
-	  <%= submit_tag "Save Changes!" %>
-	<% end %>
+		<br/>
 
-	<br/>
+		<%= form_for :team, url: create_team_path do %>
+		  Team Name: <%= text_field_tag :name %><br/>
+		  <%= hidden_field_tag "user_id", @user.id %><br/>
+
+		  <%= submit_tag "Save", class: "btn btn-info" %>
+		<% end %>
+
+		<br/>
+
+	</div>
 
 </div>

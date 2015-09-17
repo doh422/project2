@@ -1,26 +1,28 @@
 <div class="container">
 
-	Sign up form
+	<div class="panel panel-primary col-md-10">
+		<h4>Sign Up</h4>
 
-	<br/>
+		<br/>
 
-	<% flash.each do |key,value|  %>
-		<div class="<%= key %>" > <%= value %> </div>
-	<% end %>
+		<% flash.each do |key,value|  %>
+			<div class="<%= key %>" > <%= value %> </div>
+		<% end %>
 
-	<%= form_for :user, url: new_path do %>
-	  <label class="col-sm-2 control-label">Name</label>
-	  	<div class="col-sm-10"><%= text_field_tag :name, nil, placeholder: "Name", class: "form-control" %></div>
-	  <label class="col-sm-2 control-label">Email</label>
-	    <div class="col-sm-10"><%= email_field_tag :email, nil, placeholder: "Email", class: "form-control" %></div>
-	  <label class="col-sm-2 control-label">Password</label>
-	    <div class="col-sm-10"><%= password_field_tag :password, nil, placeholder: "Password", class: "form-control" %></div>
-	  <label class="col-sm-2 control-label">Confirm Password</label>
-	    <div class="col-sm-10"><%= password_field_tag :password_confirmation, nil, placeholder: "Password Confirm", class: "form-control" %></div>
-	  <div class="col-sm-offset-2 col-sm-10">
-	  	<%= submit_tag "Sign Up!", class: "btn btn-primary" %>
-	<% end %>
-	  	<%= link_to "Back", root_path, class: "btn btn-danger" %>
-	  </div>	
+		<%= form_for :user, url: new_path do %>
+		  <label class="col-sm-2 control-label">Name</label>
+		  	<div class="col-sm-10"><%= text_field_tag :name, nil, placeholder: "Name", class: "form-control" %></div>
+		  <label class="col-sm-2 control-label">Email</label>
+		    <div class="col-sm-10"><%= email_field_tag :email, nil, placeholder: "Email", class: "form-control" %></div>
+		  <label class="col-sm-2 control-label">Password</label>
+		    <div class="col-sm-10"><%= password_field_tag :password, nil, placeholder: "Password", class: "form-control" %></div>
+		  <label class="col-sm-2 control-label">Confirm Password</label>
+		    <div class="col-sm-10"><%= password_field_tag :password_confirmation, nil, placeholder: "Password Confirm", class: "form-control" %></div>
+		  <div class="col-sm-offset-2 col-sm-10">
+		  	<%= submit_tag "Sign Up!", class: "btn btn-primary" %>
+		<% end %>
+		  	<%= link_to "Back", root_path, class: "btn btn-danger" %>
+		  </div>	
+	</div>
 
 </div>
