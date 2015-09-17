@@ -32,6 +32,8 @@ class PlayersController < ApplicationController
 			@present = false
 		end
 		@roster = Roster.where(player_id: @player)
+		@user = User.find(session[:id])
+
 	end
 
 end

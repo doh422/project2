@@ -34,19 +34,26 @@
 
 	<br/>
 
-	Players
+	<h3>Players</h3>
 
 	<br/>
 
-	<ul>
+	<div class="row">
 		<% @roster.each do |x| %>
 		<!--set variable to player-->
 		<% @player_id = x.player_id %>
 		<!--grabs player object whose id matches variable above; 'where' returns array, grab first item and return name-->
-		<li><%= link_to (Player.where(id: @player_id).first.name), x.player %></li>
+		<div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+		
+	    	<div class="caption">
+			<h3><%= link_to (Player.where(id: @player_id).first.name), x.player %></h3>
+			</div>
+		</div>
+		</div>
 		<%end%>
 
-	</ul>
+	</div>
 
 
 

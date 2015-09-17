@@ -8,11 +8,12 @@
 
 	<%= form_tag('/players/list', method: "get") do %>
 		Search player by:
-		<%= select_tag "search", options_for_select(["name","position","r_team"]) %>
+		<%= select_tag "search", options_for_select(["name","position","r_team"]), class: "col-md-4" %>
 	      : <%= text_field_tag :query %>
 		<%= submit_tag "Search", "class" => "btn btn-primary" %>
-	    <% end %>
-
+	<% end %>
+	
+	
 		<br/>
 
 	  <% if @players.methods.include? :page %>
@@ -20,21 +21,24 @@
 	    <%end%>
 
 	<br/>
-
-	<table class="table table-bordered">
-		<tr>
-			<th>Name</th>
-			<th>Position</th>
-			<th>Team</th>
-		</tr>
-		<% @players.each do |x| %>
-		<tr>
-			<td><%= link_to x.name, x %></td> 
-			<td><%= x.position %></td>
-			<td><%= x.r_team %></td>
-		</tr>
-		<%end%>
+	<table>
+	  <thead>
+	    <tr>
+	      <th width="250" height="30">Name</th>
+	      <th width="200" height="30">Position</th>
+	      <th width="200" height="30">Team</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<% @players.each do |x| %>
+	    <tr>
+	      <td height="30"><%= link_to x.name, x %></td>
+	      <td height="30"><%= x.position %></td>
+	      <td height="30"><%= x.r_team %></td>
+	    </tr>
+	   <%end%>
 	</table>
+
 
 	<br/>
 
