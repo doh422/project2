@@ -2,6 +2,9 @@ class TeamsController < ApplicationController
 
 	def index	
 		@teams = Team.all
+		@user = User.find(session[:id])
+		@team  = @user.team
+
 	end
 
 	def new
@@ -23,6 +26,7 @@ class TeamsController < ApplicationController
 	def show
 		@team = Team.find(params[:id])
 		@roster = Roster.where(team_id: @team).all
+		@user = User.find(session[:id])
 	end
 
 	def edit

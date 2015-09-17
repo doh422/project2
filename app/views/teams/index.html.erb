@@ -1,21 +1,25 @@
 <div class="container">
 
+	<%= render "shared/nav" %>
+
 	<h1>Teams</h1>
 
 	<br/>
 
+	
 	<table class="table table-bordered">
 		<tr>
 			<th>Teams</th>
 			<th>Owner</th>
 		</tr>
 		<% @teams.each do |x| %>
-		<tr>
-			<td><%= link_to x.name, x %></td>
-			<td><%= x.user.name %></td>
-		</tr>
+			<tr>
+				<td><%= link_to x.name, x %></td>
+				<td><%= x.user.name %></td>
+			</tr>
 		<%end%>
 	</table>
+
 
 	<br/>
 
