@@ -36,6 +36,4 @@ Rails.application.routes.draw do
 
   delete "players/:id" => "rosters#delete", as: :delete_roster
 
-  # delete "players/:id" => "players#destroy", as: :delete_player
-
 end

@@ -11,6 +11,8 @@
 		<%= submit_tag "Search", "class" => "btn btn-primary" %>
 	    <% end %>
 
+	<%= link_to "Back", sessions_show_path, class: "btn btn-danger" %>
+
 		<br/>
 
 	  <% if @players.methods.include? :page %>
@@ -36,7 +38,6 @@
 
 	<br/>
 
-	<button><%= link_to "Back", sessions_show_path %></button>
 
 
 </div>
