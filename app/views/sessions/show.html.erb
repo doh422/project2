@@ -1,4 +1,20 @@
+
 <div class="container">
+
+	<div class="icon-bar large-vertical three-up">
+	  <a class="item">
+	    <i class="fi-home"></i>
+	    <label>Home</label>
+	  <a>
+	  <a class="item">
+	    <i class="fi-mail"></i>
+	    <label>Mailbox</label>
+	  </a>
+	  <a class="item">
+	  	<i class="fi-like"></i>
+	    <label>Likes</label>
+	  </a>
+	</div>
 
 	<%= @user.name %>'s account 
 
@@ -6,11 +22,11 @@
 
 	<%= @user.team.name %>
 
-	<button><%= link_to "change team name", edit_team_path(@user.team) %></button>
+	<%= link_to "change team name", edit_team_path(@user.team) %>
 
 	<br/>
 
-	<button><%= link_to "View other teams", teams_index_path %></button>
+	<%= link_to "View other teams", teams_index_path %>
 
 	<br/>
 
@@ -30,11 +46,11 @@
 
 
 
-	<button><%= link_to "add players", players_list_path %></button>
+	<%= link_to "add players", players_list_path %>
 
 	<br/>
 
-	<button><%= link_to "Logout", destroy_session_path %></button>
+	<%= link_to "Logout", destroy_session_path, class: "btn btn-warning" %>
 
 	<br/>
 
