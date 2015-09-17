@@ -12,7 +12,7 @@
 		<% @teams.each do |x| %>
 		<tr>
 			<td><%= link_to x.name, x %></td>
-			<td></td>
+			<td><%= x.user_id %></td>
 		</tr>
 		<%end%>
 	</table>

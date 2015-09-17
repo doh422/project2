@@ -1,7 +1,11 @@
 class TeamsController < ApplicationController
 
-	def index
+	def index	
 		@teams = Team.all
+		# @user_id = params[:user_id]
+		# @team_id = params[:team_id]
+		# @user = User.find_by(id: @user_id)
+		# @users = User.all
 	end
 
 	def new
