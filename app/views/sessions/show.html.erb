@@ -3,7 +3,7 @@
 
 	<%= render "shared/nav" %>
 
-	<h2><%= @user.team.name %></h2><small>Owner: <%= @user.name %></small>
+	<h2><%= @user.team.name %><span class="label label-default">Owner: <%= @user.name %></span></h2>
 	<br/>
 
 
@@ -13,12 +13,12 @@
 
 	<br/>
 
-	<div class="row">
+	<div class="row" style="width:940px">
 		<% @roster.each do |x| %>
 		<!--set variable to player-->
 		<% @player_id = x.player_id %>
 		<!--grabs player object whose id matches variable above; 'where' returns array, grab first item and return name-->
-		<div class="col-sm-2 col-md-4">
+		<div class="col-md-4">
 	    <div class="thumbnail">
 			<img src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/3246.png&w=350&h=254">
 	    	<div class="caption">
