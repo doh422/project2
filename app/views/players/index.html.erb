@@ -6,13 +6,15 @@
 
 	<br/>
 
-	<%= form_tag('/players/list', method: "get") do %>
+	<div class="row text-center">
+		<div class="col-lg-12">
+		<%= form_tag('/players/list', method: "get") do %>
 		Search player by:
-		<%= select_tag "search", options_for_select(["name","position","r_team"]), class: "col-md-4" %>
+		<%= select_tag "search", options_for_select(["name","position","r_team"])%>
 	      : <%= text_field_tag :query %>
 		<%= submit_tag "Search", "class" => "btn btn-primary" %>
 	<% end %>
-	
+
 	
 		<br/>
 
@@ -41,7 +43,6 @@
 
 
 	<br/>
-
-
-
+	</div>
+	</div>
 </div>
