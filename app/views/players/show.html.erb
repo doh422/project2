@@ -16,16 +16,18 @@
 			    </a>
 			  </div>
 		
-	</div>	
-
-
+	</div>
 
 	<br/>
 
-	Team Name: 
-	<ul>
+	<%= render "shared/stat" %>
+
+	<br/>
+
+	Teams 
+	<ul class="list-group">
 		<% @roster.each do |x| %>
-		<li><%= x.team.name %></li>
+		<li class="list-group-item" style="font-size:medium"><%= link_to x.team.name, x.team  %></li>
 		<%end%>
 	</ul>
 
