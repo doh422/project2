@@ -8,13 +8,20 @@
 			<h1><%= @player.name %></h1>
 
 			<h3><%= @player.position %> - <%= @player.r_team %></h3>
+
+			<!--uses conditional from controller to determine whether or not add button is viewable-->
+			<% if @present %>
+				<%= link_to	"Drop Player", delete_roster_path, method: :delete, class: "btn btn-warning" %>
+			<% else %>
+				<%= link_to "Add to Team", create_roster_path(team_id: @team), class: "btn btn-info" %>
+			<%end%>
 		</div>	
 
-			  <div class="col-md-6">
-			    <a href="#" class="thumbnail">
-			      <img src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/3246.png&w=350&h=254">
-			    </a>
-			  </div>
+		<div class="col-md-6">
+			<a href="#" class="thumbnail">
+			    <img src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/3246.png&w=350&h=254">
+			</a>	  
+		</div>
 		
 	</div>
 
@@ -24,21 +31,12 @@
 
 	<br/>
 
-	Teams 
+	<h4>Teams</h4>
 	<ul class="list-group">
 		<% @roster.each do |x| %>
 		<li class="list-group-item" style="font-size:medium"><%= link_to x.team.name, x.team  %></li>
 		<%end%>
 	</ul>
-
-	<br/>
-
-	<!--uses conditional from controller to determine whether or not add button is viewable-->
-	<% if @present %>
-		<%= link_to	"Drop Player", delete_roster_path, method: :delete, class: "btn btn-warning" %>
-	<% else %>
-		<%= link_to "Add to Team", create_roster_path(team_id: @team), class: "btn btn-info" %>
-	<%end%>
 
 	<br/>
 
