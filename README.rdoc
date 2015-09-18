@@ -3,26 +3,23 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+FANtasy Tracker is an app where you can keep up to date with your favorite teams, players, and fantasy teams.
+You can add players to your account and keep track of people from multiple sports and different teams.  
+Check other users' teams and the players that they follow.  The target audience is diehard sports fans who
+follow individual athletes across different teams and sports.  This app would provide a onestop shop to keep
+up with the latest news.
 
-* Ruby version
+Technologies used:
 
-* System dependencies
+* Ruby version 2.2.0
 
-* Configuration
+* Rails version 4.2.1
 
-* Database creation
+* POSTGRESQL database
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Bootstrap and Foundation
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Eventually I would like to utilize an API to import player info and statistics so that the latest 
+information is available to users.  I would also like to be able to provide the latest video highlights for 
+each player.
