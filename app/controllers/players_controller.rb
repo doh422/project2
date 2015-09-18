@@ -9,11 +9,11 @@ class PlayersController < ApplicationController
 	  		query = params[:query]
 	  		player_list = Player.all
 	  		@players = []
-	        	player_list.each do |player|
-	            	if player[search_field].downcase.include? query.downcase
-	                	@players << player
-	            	end
-	        	end
+	        player_list.each do |player|
+	        if player[search_field].downcase.include? query.downcase
+	        	@players << player
+	        end
+	       	end
   		else 
     		@players = Player.page(params[:page]).per(50).padding(0)
     	end

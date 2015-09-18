@@ -9,7 +9,7 @@
 	
 		<%= form_tag('/players/list', method: "get") do %>
 		Search player by:
-		<%= select_tag "search", options_for_select(["Name","Position","Team"]), class: "bar" %>
+		<%= select_tag "search", options_for_select(["name","position","r_team"]), class: "bar" %>
 	    <%= text_field_tag :query %>
 		<%= submit_tag "Search", "class" => "btn btn-primary" %>
 		<% end %>
