@@ -1,21 +1,27 @@
 <div class="container">
 
-	<div class="panel panel-primary col-md-6">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-primary">
 
-		<h4>Edit your team!</h4>
+				<h4>Edit your team!</h4>
 
-		<br/>
+				<br/>
 
-		<%= form_for :team, url: update_team_path, method: 'patch' do %>
-		  Team Name: <%= text_field_tag :name %><br/>
-		  <%= hidden_field_tag "user_id", @user.id %><br/>
-		<div class="row">  
-		  <%= submit_tag "Save changes!", class: "btn btn-info" %>
-		<% end %>
+				<%= form_for :team, url: update_team_path, method: 'patch' do %>
+				  Team Name: <%= text_field_tag :name %><br/>
+				  <%= hidden_field_tag "user_id", @user.id %><br/>
+				<div class="row">  
+					<div class="col-sm-4">
+					</div>
+				<%= submit_tag "Save changes!", class: "btn btn-info" %>
+				<% end %>
 
-		<%= link_to "Back", sessions_show_path, class: "btn btn-danger" %>
+				<%= link_to "Back", sessions_show_path, class: "btn btn-danger" %>
+				</div>
+
+			</div>
 		</div>
-
 	</div>
 
 </div>
