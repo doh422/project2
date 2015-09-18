@@ -2,19 +2,23 @@
 
 	<%= render "shared/nav" %>
 
-	<h1><%= @player.name %></h1>
-
 	<div class="row">
-	  <div class="col-xs-6 col-md-3">
-	    <a href="#" class="thumbnail">
-	      <img src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/3246.png&w=350&h=254">
-	    </a>
-	  </div>
-	</div>
+		<div class="col-md-6">
 
-	<br/>
+			<h1><%= @player.name %></h1>
 
-	<h3><%= @player.position %> - <%= @player.r_team %></h3>
+			<h3><%= @player.position %> - <%= @player.r_team %></h3>
+		</div>	
+
+			  <div class="col-md-6">
+			    <a href="#" class="thumbnail">
+			      <img src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/3246.png&w=350&h=254">
+			    </a>
+			  </div>
+		
+	</div>	
+
+
 
 	<br/>
 
