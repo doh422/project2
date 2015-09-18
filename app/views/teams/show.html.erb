@@ -26,7 +26,7 @@
 		<!--grabs player object whose id matches variable above; 'where' returns array, grab first item and return name-->
 	    <div class="col-sm-6 col-md-4">
 	    <div class="thumbnail">
-
+		  <img src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/3246.png&w=350&h=254">
 	      <div class="caption">
 	        <h3><%= link_to (Player.where(id: @player_id).first.name), x.player %></h3>
 	        <p><%= Player.where(id: @player_id).first.position %> - <%=Player.where(id: @player_id).first.r_team %></p>
