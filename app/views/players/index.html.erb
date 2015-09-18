@@ -6,14 +6,13 @@
 
 	<br/>
 
-	<div class="row text-center">
-		<div class="col-lg-12">
+	
 		<%= form_tag('/players/list', method: "get") do %>
 		Search player by:
-		<%= select_tag "search", options_for_select(["name","position","r_team"])%>
-	      : <%= text_field_tag :query %>
+		<%= select_tag "search", options_for_select(["Name","Position","Team"]), class: "bar" %>
+	    <%= text_field_tag :query, class: "bar" %>
 		<%= submit_tag "Search", "class" => "btn btn-primary" %>
-	<% end %>
+		<% end %>
 
 	
 		<br/>
@@ -23,26 +22,30 @@
 	    <%end%>
 
 	<br/>
-	<table>
-	  <thead>
-	    <tr>
-	      <th width="250" height="30">Name</th>
-	      <th width="200" height="30">Position</th>
-	      <th width="200" height="30">Team</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	  	<% @players.each do |x| %>
-	    <tr>
-	      <td height="30"><%= link_to x.name, x %></td>
-	      <td height="30"><%= x.position %></td>
-	      <td height="30"><%= x.r_team %></td>
-	    </tr>
-	   <%end%>
-	</table>
 
+	<div class="row">
+		<div class="col-sm-12">
+			<table>
+			  <thead>
+			    <tr>
+			      <th class="tablehead">Name</th>
+			      <th class="tablehead">Position</th>
+			      <th class="tablehead">Team</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<% @players.each do |x| %>
+			    <tr>
+			      <td class="tablerow"><%= link_to x.name, x %></td>
+			      <td class="tablerow"><%= x.position %></td>
+			      <td class="tablerow"><%= x.r_team %></td>
+			    </tr>
+			   <%end%>
+			  </tbody>
+			</table>
+		</div>
+	</div>
 
 	<br/>
-	</div>
-	</div>
 </div>
+
