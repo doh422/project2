@@ -6,19 +6,22 @@
 
 	<br/>
 
-	
-	<table class="table table-bordered">
-		<tr>
-			<th>Teams</th>
-			<th>Owner</th>
-		</tr>
-		<% @teams.each do |x| %>
-			<tr>
-				<td><%= link_to x.name, x %></td>
-				<td><%= x.user.name %></td>
-			</tr>
-		<%end%>
-	</table>
+	<div class="row">
+		<div class="col-sm-12">
+			<table class="table table-bordered">
+				<tr>
+					<th class="cell">Teams</th>
+					<th class="cell">Owner</th>
+				</tr>
+				<% @teams.each do |x| %>
+				<tr>
+					<td class="cell"><%= link_to x.name, x %></td>
+					<td class="cell"><%= x.user.name %></td>
+				</tr>
+				<%end%>
+			</table>
+		</div>
+	</div>
 
 
 	<br/>
