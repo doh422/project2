@@ -20,6 +20,16 @@ module API
 			end
 		end
 
+		def update
+			player = Player.find(params[:id])
+
+			if player.update(player_params)
+				head 204
+			else
+				render json: player.errors, status: 422
+			end
+		end
+
 		private
 		def player_params
 			params.require(:player).permit(:name,:position,:r_team)
