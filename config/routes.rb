@@ -40,4 +40,8 @@ Rails.application.routes.draw do
     resources :players, only: [:index, :show, :create, :update, :destroy]
   end
 
+  namespace :api do
+    resources :rosters, only: [:index]
+  end
+
 end
