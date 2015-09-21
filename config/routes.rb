@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   delete "players/:id" => "rosters#delete", as: :delete_roster
 
   namespace :api do
-    resources :players, only: [:index, :show, :create, :update]
+    resources :players, only: [:index, :show, :create, :update, :destroy]
   end
 
 end

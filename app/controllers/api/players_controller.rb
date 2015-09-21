@@ -30,6 +30,12 @@ module API
 			end
 		end
 
+		def destroy
+			player = Player.find(params[:id])
+			player.destroy
+			head 204
+		end
+
 		private
 		def player_params
 			params.require(:player).permit(:name,:position,:r_team)
